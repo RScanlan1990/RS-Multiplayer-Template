@@ -15,7 +15,7 @@ public class PlayerController : NetworkBehaviour {
         if(!isLocalPlayer)
         {
             Destroy(cameraParent);
-            Destroy(gameObject.transform.Find("Canvas").gameObject);
+            gameObject.transform.Find("Canvas").gameObject.SetActive(false);
         }
     }
 

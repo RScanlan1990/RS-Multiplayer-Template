@@ -59,17 +59,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Chat\ChatController.cs" />
+    <Compile Include="Assets\Scripts\Chat\ChatMessage.cs" />
+    <Compile Include="Assets\Scripts\Chat\ChatMessageBase.cs" />
     <Compile Include="Assets\Scripts\Player\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Player\ChatController.cs" />
     <Compile Include="Assets\Scripts\Player\MouseController.cs" />
     <Compile Include="Assets\Scripts\Player\MovementController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\RayCast.cs" />
+    <Compile Include="Assets\Scripts\RSNetWorkManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/code/Unity/Multiplayer_Chat_Room/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/code/RPG/Multiplayer_Chat_Room/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/code/Unity/Multiplayer_Chat_Room/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/code/RPG/Multiplayer_Chat_Room/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.1.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
