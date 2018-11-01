@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4841368082161292}
   - component: {fileID: 195885378529372334}
+  - component: {fileID: 143173739983262054}
   - component: {fileID: 114785365289545478}
   - component: {fileID: 114178223327276750}
   - component: {fileID: 114740940163638096}
@@ -315,7 +316,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1062938727296856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -137.40451, y: -7.044327, z: -23.623547}
+  m_LocalPosition: {x: -824.48975, y: -840.55695, z: -23.623547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4687624787024472}
@@ -481,8 +482,8 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.05263158
+  m_TransformSyncMode: 4
+  m_SendInterval: 0.05
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -530,7 +531,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224847190570727434}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.3054115
+  m_Size: 0.30697832
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -906,6 +907,23 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!143 &143173739983262054
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1062938727296856}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!195 &195885378529372334
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -914,7 +932,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1062938727296856}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.5
   m_Speed: 7
   m_Acceleration: 32
   avoidancePriority: 50
@@ -926,7 +944,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!222 &222081868126253602
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1104,7 +1122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 353.6411}
+  m_AnchoredPosition: {x: 0, y: 353.63998}
   m_SizeDelta: {x: 0, y: 510.89}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224785253680338324
