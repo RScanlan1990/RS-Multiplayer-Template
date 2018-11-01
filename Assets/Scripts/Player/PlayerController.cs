@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
+[RequireComponent(typeof(AnimationController))]
 [RequireComponent(typeof(ChatController))]
 public class PlayerController : NetworkBehaviour {
 
