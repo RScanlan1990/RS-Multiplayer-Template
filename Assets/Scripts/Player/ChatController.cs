@@ -12,15 +12,15 @@ public class ChatController : NetworkBehaviour {
     }
 
     private void Update()
-    {
-        if(_inputField.isFocused && _inputField.text != "" && Input.GetButtonUp("Submit"))
+    { 
+        if(isLocalPlayer && _inputField.isFocused && _inputField.text != "" && Input.GetButtonUp("Submit"))
         {
             CmdWriteMessage(_inputField.text);
         }        
     }
 
     [Command]
-    public void CmdWriteMessage(string msg)
+    private void CmdWriteMessage(string msg)
     {
         RpcReceiveChat(msg);
         _inputField.text = "";
@@ -29,7 +29,7 @@ public class ChatController : NetworkBehaviour {
     }
 
     [ClientRpc]
-    public void RpcReceiveChat(string msg)
+    private void RpcReceiveChat(string msg)
     {
         Debug.Log("Got chat message: " + msg);
     }
