@@ -48,20 +48,37 @@ public class CameraController : NetworkBehaviour {
     {
         var localForward = _camera.transform.worldToLocalMatrix.MultiplyVector(_camera.transform.forward);
         var zoomVector = localForward * input;
-        if (input > 0.0f && AboveMinZoom())
+
+        if (input > 0.0f)
         {
-            _camera.transform.Translate(zoomVector);
+            ZoomIn(zoomVector); 
         }
 
-        if (input < 0.0f && BelowMaxZoom())
+        if (input < 0.0f)
+        {
+            ZoomOut(zoomVector);
+        }
+    }
+
+    private void ZoomIn(Vector3 zoomVector)
+    {
+        if(AboveMinZoom())
         {
             _camera.transform.Translate(zoomVector);
-        }
+        }  
     }
 
     private bool AboveMinZoom()
     {
         return Vector3.Distance(_camera.transform.position, _playerPos) > minZoom;
+    }
+
+    private void ZoomOut(Vector3 zoomVector)
+    {
+        if(BelowMaxZoom())
+        {
+            _camera.transform.Translate(zoomVector);
+        }
     }
 
     private bool BelowMaxZoom()

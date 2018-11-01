@@ -21,7 +21,28 @@ public class ChatController : NetworkBehaviour {
         _chatContent = GetComponentInChildren(typeof(GridLayoutGroup), true).gameObject;
         if(isLocalPlayer)
         {
-            StartCoroutine(CheckChatMessage());
+            StartCoroutine(LookForChatMessages());
+        }
+    }
+
+    private IEnumerator LookForChatMessages()
+    {
+        var networkManager = NetworkManager.singleton.gameObject.GetComponent<RSNetWorkManager>();
+        while (true)
+        {
+            var messages = networkManager.ChatMessages;
+            yield return new WaitForSeconds(0.5f);
+            var newMessages = messages.Except(_chatMessages).ToList();
+            if (newMessages.Count > 0)
+            {
+                foreach (var message in newMessages)
+                {
+                    _chatMessages.Add(message);
+                    var messagePrefab = Instantiate(ChatMessagePrefab, _chatContent.transform);
+                    messagePrefab.transform.SetAsFirstSibling();
+                    messagePrefab.SetMessage(message);
+                }
+            }
         }
     }
 
@@ -41,27 +62,6 @@ public class ChatController : NetworkBehaviour {
                 ChatFocused = false;
             }
         }  
-    }
-
-    private IEnumerator CheckChatMessage()
-    {
-        var networkManager = NetworkManager.singleton.gameObject.GetComponent<RSNetWorkManager>();
-        while (true)
-        {
-            var messages = networkManager.ChatMessages;
-            yield return new WaitForSeconds(0.5f);
-            var newMessages = messages.Except(_chatMessages).ToList();
-            if(newMessages.Count > 0)
-            {
-                foreach (var message in newMessages)
-                {
-                    _chatMessages.Add(message);
-                    var messagePrefab = Instantiate(ChatMessagePrefab, _chatContent.transform);
-                    messagePrefab.transform.SetAsFirstSibling();
-                    messagePrefab.SetMessage(message);
-                }
-            }
-        }
     }
 
     private void WriteMessage(string currentMessage)
