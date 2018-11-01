@@ -10,11 +10,10 @@ using System.Collections;
 public class ChatController : NetworkBehaviour {
 
     public ChatMessage ChatMessagePrefab;
-
+    public bool ChatFocused;
     private InputField _inputField;
     private GameObject _chatContent;
     private List<string> _chatMessages = new List<string>();
-
 
     void Start()
     {
@@ -30,20 +29,27 @@ public class ChatController : NetworkBehaviour {
     {
         if (isLocalPlayer)
         {
-            if(_inputField.isFocused && _inputField.text != "" && Input.GetButtonUp("Submit"))
+            if(_inputField.isFocused)
             {
-                WriteMessage(_inputField.text);
+                ChatFocused = true;
+                if (_inputField.text != "" && Input.GetButtonUp("Submit"))
+                {
+                    WriteMessage(_inputField.text);
+                }
+            } else
+            {
+                ChatFocused = false;
             }
-            
         }  
     }
 
     private IEnumerator CheckChatMessage()
     {
+        var networkManager = NetworkManager.singleton.gameObject.GetComponent<RSNetWorkManager>();
         while (true)
         {
-            var messages = NetworkManager.singleton.gameObject.GetComponent<RSNetWorkManager>().ChatMessages;
-            yield return new WaitForSeconds(0.25f);
+            var messages = networkManager.ChatMessages;
+            yield return new WaitForSeconds(0.5f);
             var newMessages = messages.Except(_chatMessages).ToList();
             if(newMessages.Count > 0)
             {

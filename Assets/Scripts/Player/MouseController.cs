@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 
 public class MouseController : NetworkBehaviour  {
@@ -10,7 +11,7 @@ public class MouseController : NetworkBehaviour  {
     {
         _camera = camera;
         _movement = gameObject.AddComponent<MovementController>();
-        _movement.Init();
+        _movement.Init();   
     }
 
     void Update ()
@@ -25,7 +26,7 @@ public class MouseController : NetworkBehaviour  {
     {
         RayCast rayCast = new RayCast(_camera); 
         RaycastHit hit = rayCast.CameraToMousePosition();
-        if (hit.transform != null)
+        if (hit.transform != null && !EventSystem.current.IsPointerOverGameObject())
         {
             switch(hit.transform.tag)
             {

@@ -10,13 +10,15 @@ public class CameraController : NetworkBehaviour {
     private GameObject _player;
     private GameObject _cameraAxis;
     private Vector3 _playerPos;
-    
+    private ChatController _chat;
+
     public void Init(Camera camera)
     {
         _camera = camera;
         _player = gameObject;
         _cameraAxis = gameObject.transform.Find("CameraAxis").gameObject;
         _cameraAxis.transform.parent = null;
+        _chat = gameObject.GetComponent<ChatController>();
     }
 
     void Update()
@@ -24,8 +26,11 @@ public class CameraController : NetworkBehaviour {
         FollowPlayer();
         LookAtPlayer();
         ZoomCamera(Input.GetAxis("Zoom"));
-        VerticalRotation(Input.GetAxis("Vertical"));
-        HorizontalRotation(Input.GetAxis("Horizontal"));
+        if (!_chat.ChatFocused)
+        {
+            VerticalRotation(Input.GetAxis("Vertical"));
+            HorizontalRotation(Input.GetAxis("Horizontal"));
+        }
     }
 
     private void FollowPlayer()
