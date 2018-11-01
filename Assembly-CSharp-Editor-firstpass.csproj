@@ -65,11 +65,11 @@
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/code/RPG/Multiplayer_Chat_Room/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/code/RPG/Multiplayer_Chat_Room/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/code/RPG/Multiplayer_Chat_Room/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/code/RPG/Multiplayer_Chat_Room/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/code/RPG/Multiplayer_Chat_Room/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
