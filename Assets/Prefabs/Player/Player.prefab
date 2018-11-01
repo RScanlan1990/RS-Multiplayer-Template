@@ -114,8 +114,10 @@ GameObject:
   - component: {fileID: 195885378529372334}
   - component: {fileID: 114785365289545478}
   - component: {fileID: 114178223327276750}
+  - component: {fileID: 95472800061948450}
   - component: {fileID: 114740940163638096}
   - component: {fileID: 114465019608253732}
+  - component: {fileID: 114473460417628920}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1489,7 +1491,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1062938727296856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.198897, y: 0.0000008940697, z: -5.3549376}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4687624787024472}
@@ -1621,6 +1623,24 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &95472800061948450
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1062938727296856}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: bc70864b913b49b47ab82655895b568c, type: 3}
+  m_Controller: {fileID: 9100000, guid: 797dcc66cc23b8b40928f0e089ed2c63, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95887367276869012
 Animator:
   serializedVersion: 3
@@ -1755,7 +1775,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224847190570727434}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.30767864
+  m_Size: 0.3077612
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1903,6 +1923,25 @@ MonoBehaviour:
   ChatMessagePrefab: {fileID: 114140544578524712, guid: 2916ec37c54654a4d9906bae5d0a5586,
     type: 2}
   ChatFocused: 0
+--- !u!114 &114473460417628920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1062938727296856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95472800061948450}
+  m_ParameterSendBits: 1
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &114481280930036746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2425,7 +2464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 353.64}
+  m_AnchoredPosition: {x: 0, y: 353.64008}
   m_SizeDelta: {x: 0, y: 510.89}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224785253680338324
