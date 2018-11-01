@@ -89,7 +89,21 @@ public class CameraController : NetworkBehaviour {
     private void VerticalRotation(float input)
     {
         var direction = transform.up * input;
-        _camera.transform.Translate(direction);
+        if(direction.y > 0.0f)
+        {
+            if (_camera.transform.eulerAngles.x < 60.0f)
+            {
+                _camera.transform.Translate(direction);
+            }
+        }
+
+        if (direction.y < 0.0f)
+        {
+            if (_camera.transform.eulerAngles.x > 20.0f)
+            {
+                _camera.transform.Translate(direction);
+            }
+        }
     }
 
     private void HorizontalRotation(float input)

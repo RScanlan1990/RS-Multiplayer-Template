@@ -211,11 +211,9 @@ C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.ParticleSystemModul
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.Physics2DModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.PhysicsModule.dll
-C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.Purchasing.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
-C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.StandardEvents.dll
@@ -229,7 +227,6 @@ C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.Timeline.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.TimelineModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.TLSModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.UI.dll
-C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.UIAutomation.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.UIElementsModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.UIModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.UmbraModule.dll
@@ -244,7 +241,6 @@ C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWM
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.VehiclesModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.VideoModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.VRModule.dll
-C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.WebModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.WindModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.XRModule.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityScript.dll
@@ -256,13 +252,10 @@ C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\ExCSS.Unity.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Boo.Lang.Parser.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Boo.Lang.Compiler.dll
-C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Unity.UNetWeaver.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Unity.IvyParser.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Boo.Lang.PatternMatching.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Boo.Lang.Useful.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Unity.CecilTools.dll
-C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Unity.Cecil.Pdb.dll
-C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Unity.Cecil.Mdb.dll
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEditor.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.AIModule.xml
@@ -294,7 +287,6 @@ C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.PhysicsModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.Physics2DModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.SharedInternalsModule.xml
-C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.SpriteMaskModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.SpriteShapeModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.StyleSheetsModule.xml
@@ -319,13 +311,11 @@ C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWM
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.VRModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.VehiclesModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.VideoModule.xml
-C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.WebModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.WindModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.XRModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.UI.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.Networking.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.Timeline.xml
-C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.UIAutomation.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
@@ -334,3 +324,13 @@ C:\code\RPG\Multiplayer_Chat_Room\obj\Debug\Assembly-CSharp-firstpass.csproj.Cor
 C:\code\RPG\Multiplayer_Chat_Room\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
 C:\code\RPG\Multiplayer_Chat_Room\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\code\RPG\Multiplayer_Chat_Room\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Unity.TextMeshPro.dll
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.dll
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.LocalizationModule.dll
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.ProfilerModule.dll
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.StreamingModule.dll
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.xml
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.LocalizationModule.xml
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.StreamingModule.xml
