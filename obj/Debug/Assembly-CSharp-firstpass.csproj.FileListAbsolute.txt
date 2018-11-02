@@ -334,3 +334,5 @@ C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.FileSystemHttpModul
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.LocalizationModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
 C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEngine.StreamingModule.xml
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEditor.UI.dll
+C:\code\RPG\Multiplayer_Chat_Room\Temp\bin\Debug\UnityEditor.UI.xml

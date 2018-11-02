@@ -8,7 +8,6 @@ public class PlayerController : NetworkBehaviour {
     public GameObject cameraParent;
     private MouseController _mouse;
     private CameraController _camera;
-    private ChatController _chat;
     private AnimationController _animation;
 
     private void Start()
