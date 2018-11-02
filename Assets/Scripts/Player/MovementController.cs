@@ -1,33 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.AI;
 
-public class MovementController : MonoBehaviour {
+public class MovementController : NetworkBehaviour {
 
     public float PlayerSpeed;
     private NavMeshAgent navMeshAgent;
 
-    public void Init()
+    public void Start()
     {
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
     }
 
-    public void CalculatePathAndMove(Vector3 clickPosition)
+    [Command]
+    public void CmdRequestMove(Vector3 clickPosition)
     {
-        var path = CalculatePath(clickPosition);
-        Move(path);
+        RpcDoMove(clickPosition);
     }
 
-    private NavMeshPath CalculatePath(Vector3 clickPostion)
+    [ClientRpc]
+    private void RpcDoMove(Vector3 clickPosition)
     {
-        NavMeshPath path = new NavMeshPath();
-        NavMeshHit hit;
-        NavMesh.SamplePosition(clickPostion, out hit, Mathf.Infinity, NavMesh.AllAreas);
-        navMeshAgent.CalculatePath(hit.position, path);
-        return path;
-    }
-
-    private void Move(NavMeshPath path)
-    {
-        navMeshAgent.SetPath(path);
+        navMeshAgent.SetDestination(clickPosition);
     }
 }

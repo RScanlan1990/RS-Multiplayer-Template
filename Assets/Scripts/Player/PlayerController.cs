@@ -2,10 +2,10 @@
 using UnityEngine.Networking;
 
 [RequireComponent(typeof(ChatController))]
+[RequireComponent(typeof(MovementController))]
 public class PlayerController : NetworkBehaviour {
 
     public GameObject cameraParent;
-
     private MouseController _mouse;
     private CameraController _camera;
     private ChatController _chat;
@@ -24,7 +24,7 @@ public class PlayerController : NetworkBehaviour {
     {
         var playerCamera = cameraParent.GetComponentInChildren<Camera>();
         _mouse = gameObject.AddComponent<MouseController>();
-        _mouse.Init(playerCamera);
+        _mouse.Init(playerCamera, gameObject.GetComponent<MovementController>());
         _camera = gameObject.AddComponent<CameraController>();
         _camera.Init(playerCamera);
         _animation = gameObject.AddComponent<AnimationController>();

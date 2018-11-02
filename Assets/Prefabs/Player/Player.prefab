@@ -114,10 +114,11 @@ GameObject:
   - component: {fileID: 195885378529372334}
   - component: {fileID: 114785365289545478}
   - component: {fileID: 114178223327276750}
+  - component: {fileID: 114473460417628920}
   - component: {fileID: 95472800061948450}
   - component: {fileID: 114740940163638096}
   - component: {fileID: 114465019608253732}
-  - component: {fileID: 114473460417628920}
+  - component: {fileID: 114190805375756346}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1721,13 +1722,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1062938727296856}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.05
+  m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -1736,6 +1737,18 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114190805375756346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1062938727296856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4639398e433127244993b1802ca4b001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerSpeed: 0
 --- !u!114 &114205857765108792
 MonoBehaviour:
   m_ObjectHideFlags: 1

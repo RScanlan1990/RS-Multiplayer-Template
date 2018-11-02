@@ -7,11 +7,10 @@ public class MouseController : NetworkBehaviour  {
     private Camera _camera;
     private MovementController _movement;
 
-    public void Init(Camera camera)
+    public void Init(Camera camera, MovementController movement)
     {
         _camera = camera;
-        _movement = gameObject.AddComponent<MovementController>();
-        _movement.Init();   
+        _movement = movement;
     }
 
     void Update ()
@@ -31,7 +30,7 @@ public class MouseController : NetworkBehaviour  {
             switch(hit.transform.tag)
             {
                 case "Walkable":
-                    _movement.CalculatePathAndMove(hit.point);
+                    _movement.CmdRequestMove(hit.point);
                     break;
             }
         }
