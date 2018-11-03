@@ -5,11 +5,8 @@ using UnityEngine.UI;
 
 public class ChatMessage : ChatMessageBase
 {
-    private string _message;
-
-    public void SetMessage(string message)
+    public void SetMessage(string sender, string message)
     {
-        _message = message;
-        GetComponentInChildren<Text>().text = message;
+        GetComponentInChildren<Text>().text = sender + " : " + message;
     }
 }

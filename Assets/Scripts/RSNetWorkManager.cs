@@ -32,7 +32,6 @@ public class RSNetWorkManager : NetworkManager {
     public virtual void OnClientChatMessage(NetworkMessage netMsg)
     {
         var msg = netMsg.ReadMessage<StringMessage>();
-        Debug.Log("New chat message on client: " + msg.value);
         ChatMessages.Add(msg.value);
     }
 }
