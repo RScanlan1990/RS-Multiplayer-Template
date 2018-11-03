@@ -51,20 +51,19 @@ public class ChatController : NetworkBehaviour {
 
     private void Update()
     {
-        if (isLocalPlayer)
+        if (!isLocalPlayer) { return; }
+        
+        if(_chatInputField.isFocused)
         {
-            if(_chatInputField.isFocused)
+            ChatFocused = true;
+            if (_chatInputField.text != "" && Input.GetButtonUp("Submit"))
             {
-                ChatFocused = true;
-                if (_chatInputField.text != "" && Input.GetButtonUp("Submit"))
-                {
-                    WriteMessage(_chatInputField.text);
-                }
-            } else
-            {
-                ChatFocused = false;
+                WriteMessage(_chatInputField.text);
             }
-        }  
+        } else
+        {
+            ChatFocused = false;
+        }    
     }
 
     private void WriteMessage(string currentMessage)

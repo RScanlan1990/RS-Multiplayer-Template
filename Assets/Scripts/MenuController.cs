@@ -10,7 +10,6 @@ public class MenuController : MonoBehaviour {
     public void StartGame()
     {
         SetPlayerName();
-        RSNetWorkManager.singleton.ServerChangeScene("Main");
     }
 
     public void SetPlayerName()
