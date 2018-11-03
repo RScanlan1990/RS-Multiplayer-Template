@@ -14,23 +14,24 @@ public class ChatController : NetworkBehaviour {
     private InputField _inputField;
     private GameObject _chatContent;
     private List<string> _chatMessages = new List<string>();
+    private RSNetWorkManager _networkManager;
 
     void Start()
     {
         _inputField = GetComponentInChildren(typeof(InputField), true) as InputField;
         _chatContent = GetComponentInChildren(typeof(GridLayoutGroup), true).gameObject;
-        if(isLocalPlayer)
+        _networkManager = NetworkManager.singleton.gameObject.GetComponent<RSNetWorkManager>();
+        if (isLocalPlayer)
         {
             StartCoroutine(LookForChatMessages());
         }
     }
 
     private IEnumerator LookForChatMessages()
-    {
-        var networkManager = NetworkManager.singleton.gameObject.GetComponent<RSNetWorkManager>();
+    { 
         while (true)
         {
-            var messages = networkManager.ChatMessages;
+            var messages = _networkManager.ChatMessages;
             yield return new WaitForSeconds(0.5f);
             var newMessages = messages.Except(_chatMessages).ToList();
             if (newMessages.Count > 0)
@@ -38,9 +39,10 @@ public class ChatController : NetworkBehaviour {
                 foreach (var message in newMessages)
                 {
                     _chatMessages.Add(message);
+                    var chatMessage = JsonUtility.FromJson<JsonMessage>(message);
                     var messagePrefab = Instantiate(ChatMessagePrefab, _chatContent.transform);
                     messagePrefab.transform.SetAsFirstSibling();
-                    messagePrefab.SetMessage(message);
+                    messagePrefab.SetMessage(chatMessage.Sender, chatMessage.Message);
                 }
             }
         }
@@ -66,10 +68,24 @@ public class ChatController : NetworkBehaviour {
 
     private void WriteMessage(string currentMessage)
     {
-        var message = new StringMessage(currentMessage);
-        NetworkManager.singleton.client.Send((short)ChatMessage.ChatMessageTypes.CHAT_MESSAGE, message);
+        var message = new JsonMessage("sender", currentMessage);
+        var json = JsonUtility.ToJson(message);
+        var networkMessage = new StringMessage(json);
+        NetworkManager.singleton.client.Send((short)ChatMessage.ChatMessageTypes.CHAT_MESSAGE, networkMessage);
         _inputField.text = "";
         _inputField.ActivateInputField();
         _inputField.Select();
+    }
+
+    private class JsonMessage
+    {
+        public string Sender;
+        public string Message;
+
+        public JsonMessage(string sender, string message)
+        {
+            Sender = sender;
+            Message = message;
+        }
     }
 }
