@@ -36,9 +36,8 @@ public class RSNetWorkManager : NetworkManager {
         ChatMessages.Add(msg.value);
     }
 
-    public void CreateMatchMakingGame()
+    public void CreateMatch()
     {
         StartHost();
-
     }
 }
