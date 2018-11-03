@@ -8,6 +8,7 @@ public class RSNetWorkManager : NetworkManager {
 
     public List<string> ChatMessages = new List<string>();
 
+
     // hook into NetworkManager client setup process
     public override void OnStartClient(NetworkClient mClient)
     {
@@ -33,5 +34,11 @@ public class RSNetWorkManager : NetworkManager {
     {
         var msg = netMsg.ReadMessage<StringMessage>();
         ChatMessages.Add(msg.value);
+    }
+
+    public void CreateMatchMakingGame()
+    {
+        StartHost();
+
     }
 }
