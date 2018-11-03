@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Chat\ChatController.cs" />
     <Compile Include="Assets\Scripts\Chat\ChatMessage.cs" />
     <Compile Include="Assets\Scripts\Chat\ChatMessageBase.cs" />
+    <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Player\CameraController.cs" />
     <Compile Include="Assets\Scripts\Player\MouseController.cs" />

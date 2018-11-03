@@ -11,14 +11,15 @@ public class ChatController : NetworkBehaviour {
 
     public ChatMessage ChatMessagePrefab;
     public bool ChatFocused;
-    private InputField _inputField;
+    
+    private InputField _chatInputField;
     private GameObject _chatContent;
     private List<string> _chatMessages = new List<string>();
     private RSNetWorkManager _networkManager;
 
     void Start()
     {
-        _inputField = GetComponentInChildren(typeof(InputField), true) as InputField;
+        _chatInputField = GetComponentInChildren(typeof(InputField), true) as InputField;
         _chatContent = GetComponentInChildren(typeof(GridLayoutGroup), true).gameObject;
         _networkManager = NetworkManager.singleton.gameObject.GetComponent<RSNetWorkManager>();
         if (isLocalPlayer)
@@ -52,12 +53,12 @@ public class ChatController : NetworkBehaviour {
     {
         if (isLocalPlayer)
         {
-            if(_inputField.isFocused)
+            if(_chatInputField.isFocused)
             {
                 ChatFocused = true;
-                if (_inputField.text != "" && Input.GetButtonUp("Submit"))
+                if (_chatInputField.text != "" && Input.GetButtonUp("Submit"))
                 {
-                    WriteMessage(_inputField.text);
+                    WriteMessage(_chatInputField.text);
                 }
             } else
             {
@@ -68,13 +69,13 @@ public class ChatController : NetworkBehaviour {
 
     private void WriteMessage(string currentMessage)
     {
-        var message = new JsonMessage("sender", currentMessage);
+        var message = new JsonMessage(PlayerPrefs.GetString("playerName"), currentMessage);
         var json = JsonUtility.ToJson(message);
         var networkMessage = new StringMessage(json);
         NetworkManager.singleton.client.Send((short)ChatMessage.ChatMessageTypes.CHAT_MESSAGE, networkMessage);
-        _inputField.text = "";
-        _inputField.ActivateInputField();
-        _inputField.Select();
+        _chatInputField.text = "";
+        _chatInputField.ActivateInputField();
+        _chatInputField.Select();
     }
 
     private class JsonMessage
