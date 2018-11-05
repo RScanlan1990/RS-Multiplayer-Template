@@ -39,4 +39,9 @@ public class RSNetWorkManager : NetworkManager {
     {
         StartHost();
     }
+
+    public void ClearMessages()
+    {
+        ChatMessages = new List<string>();
+    }
 }

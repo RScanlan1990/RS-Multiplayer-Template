@@ -26,7 +26,7 @@ public class CameraController : NetworkBehaviour {
         FollowPlayer();
         LookAtPlayer();
         ZoomCamera(Input.GetAxis("Zoom"));
-        if (!_chat.ChatFocused)
+        if (!_chat.IsChatFocused())
         {
             VerticalRotation(Input.GetAxis("Vertical"));
             HorizontalRotation(Input.GetAxis("Horizontal"));

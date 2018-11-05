@@ -1,26 +1,19 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.Networking.NetworkSystem;
-using System.Collections.Generic;
-using System.Linq;
 using System.Collections;
 
 public class ChatController : NetworkBehaviour {
 
     public ChatMessage ChatMessagePrefab;
-    public bool ChatFocused;
     
     private InputField _chatInputField;
-    private GameObject _chatContent;
-    private List<string> _chatMessages = new List<string>();
     private RSNetWorkManager _networkManager;
 
     void Start()
     {
-        _chatInputField = GetComponentInChildren(typeof(InputField), true) as InputField;
-        _chatContent = GetComponentInChildren(typeof(VerticalLayoutGroup), true).gameObject;
+        _chatInputField = GetComponentInChildren(typeof(InputField), true) as InputField; 
         _networkManager = NetworkManager.singleton.gameObject.GetComponent<RSNetWorkManager>();
         if (isLocalPlayer)
         {
@@ -30,20 +23,17 @@ public class ChatController : NetworkBehaviour {
 
     private IEnumerator LookForChatMessages()
     { 
+        var chatContent = GetComponentInChildren(typeof(VerticalLayoutGroup), true).gameObject;
         while (true)
         {
             var messages = _networkManager.ChatMessages;
             yield return new WaitForSeconds(0.5f);
-            var newMessages = messages.Except(_chatMessages).ToList();
-            if (newMessages.Count > 0)
+            _networkManager.ClearMessages();
+            foreach (var message in messages)
             {
-                foreach (var message in newMessages)
-                {
-                    _chatMessages.Add(message);
-                    var chatMessage = JsonUtility.FromJson<JsonMessage>(message);
-                    var messagePrefab = Instantiate(ChatMessagePrefab, _chatContent.transform);
-                    messagePrefab.SetMessage(chatMessage.Sender, chatMessage.Message);
-                }
+                var chatMessage = JsonUtility.FromJson<JsonMessage>(message);
+                var messagePrefab = Instantiate(ChatMessagePrefab, chatContent.transform);
+                messagePrefab.SetMessage(chatMessage.Sender, chatMessage.Message);
             }
         }
     }
@@ -51,22 +41,19 @@ public class ChatController : NetworkBehaviour {
     private void Update()
     {
         if (!isLocalPlayer) { return; }
-        
         if(_chatInputField.isFocused)
         {
-            ChatFocused = true;
             if (_chatInputField.text != "" && Input.GetButtonUp("Submit"))
             {
+                
                 WriteMessage(_chatInputField.text);
             }
-        } else
-        {
-            ChatFocused = false;
         }    
     }
 
     private void WriteMessage(string currentMessage)
     {
+        _chatInputField.DeactivateInputField();
         var message = new JsonMessage(PlayerPrefs.GetString("playerName"), currentMessage);
         var json = JsonUtility.ToJson(message);
         var networkMessage = new StringMessage(json);
@@ -86,5 +73,10 @@ public class ChatController : NetworkBehaviour {
             Sender = sender;
             Message = message;
         }
+    }
+
+    public bool IsChatFocused()
+    {
+        return _chatInputField.isFocused;
     }
 }
