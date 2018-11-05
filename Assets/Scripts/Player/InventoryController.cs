@@ -8,10 +8,11 @@ public class InventoryController : NetworkBehaviour
     public override void OnStartLocalPlayer()
     {
        _inventorySlots = gameObject.transform.Find("Canvas")
-                                   .transform.Find("Inventory")
-                                   .transform.Find("Inventory_Slots").GetComponentsInChildren<InventorySlot>();
+                                   .Find("Inventory")
+                                   .Find("Inventory_Slots").GetComponentsInChildren<InventorySlot>();
     }
 
+    //Todo Dont Pass GameObject
     [Command]
     public void CmdPickUpItem(GameObject loot)
     {
@@ -19,6 +20,7 @@ public class InventoryController : NetworkBehaviour
         RpcPickUpItem(loot);
     }
 
+    //Todo Dont Pass GameObject
     [ClientRpc]
     public void RpcPickUpItem(GameObject loot)
     {
