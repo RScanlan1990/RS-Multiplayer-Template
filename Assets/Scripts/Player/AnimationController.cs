@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
+﻿using UnityEngine;
 
 public class AnimationController : MonoBehaviour {
 
-    private NavMeshAgent _navMeshAgent;
     private Animator _animator;
 
     private Vector3 previous;
@@ -13,7 +9,6 @@ public class AnimationController : MonoBehaviour {
 
     public void Init()
     {
-        _navMeshAgent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
     }
 

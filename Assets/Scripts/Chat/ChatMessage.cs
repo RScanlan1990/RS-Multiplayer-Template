@@ -7,6 +7,6 @@ public class ChatMessage : ChatMessageBase
 {
     public void SetMessage(string sender, string message)
     {
-        GetComponentInChildren<Text>().text = sender + " : " + message;
+        GetComponent<Text>().text = sender + " : " + message;
     }
 }

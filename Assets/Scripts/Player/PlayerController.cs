@@ -10,7 +10,6 @@ public class PlayerController : NetworkBehaviour {
     private MouseController _mouse;
     private CameraController _camera;
     private AnimationController _animation;
-    private InventoryController _inventory;
 
     private void Start()
     {

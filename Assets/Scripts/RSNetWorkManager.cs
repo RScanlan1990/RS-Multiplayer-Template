@@ -8,7 +8,6 @@ public class RSNetWorkManager : NetworkManager {
 
     public List<string> ChatMessages = new List<string>();
 
-
     // hook into NetworkManager client setup process
     public override void OnStartClient(NetworkClient mClient)
     {

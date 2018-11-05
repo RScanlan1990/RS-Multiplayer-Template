@@ -20,7 +20,7 @@ public class ChatController : NetworkBehaviour {
     void Start()
     {
         _chatInputField = GetComponentInChildren(typeof(InputField), true) as InputField;
-        _chatContent = GetComponentInChildren(typeof(GridLayoutGroup), true).gameObject;
+        _chatContent = GetComponentInChildren(typeof(VerticalLayoutGroup), true).gameObject;
         _networkManager = NetworkManager.singleton.gameObject.GetComponent<RSNetWorkManager>();
         if (isLocalPlayer)
         {
@@ -42,7 +42,6 @@ public class ChatController : NetworkBehaviour {
                     _chatMessages.Add(message);
                     var chatMessage = JsonUtility.FromJson<JsonMessage>(message);
                     var messagePrefab = Instantiate(ChatMessagePrefab, _chatContent.transform);
-                    messagePrefab.transform.SetAsFirstSibling();
                     messagePrefab.SetMessage(chatMessage.Sender, chatMessage.Message);
                 }
             }
