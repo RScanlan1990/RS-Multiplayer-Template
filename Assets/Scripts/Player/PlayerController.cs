@@ -3,12 +3,14 @@ using UnityEngine.Networking;
 
 [RequireComponent(typeof(ChatController))]
 [RequireComponent(typeof(MovementController))]
+[RequireComponent(typeof(InventoryController))]
 public class PlayerController : NetworkBehaviour {
 
     public GameObject cameraParent;
     private MouseController _mouse;
     private CameraController _camera;
     private AnimationController _animation;
+    private InventoryController _inventory;
 
     private void Start()
     {

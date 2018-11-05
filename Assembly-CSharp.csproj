@@ -64,9 +64,16 @@
     <Compile Include="Assets\Scripts\Chat\ChatController.cs" />
     <Compile Include="Assets\Scripts\Chat\ChatMessage.cs" />
     <Compile Include="Assets\Scripts\Chat\ChatMessageBase.cs" />
+    <Compile Include="Assets\Scripts\Interactable.cs" />
+    <Compile Include="Assets\Scripts\InventorySlot.cs" />
+    <Compile Include="Assets\Scripts\Items\Hatchet\Hatchet.cs" />
+    <Compile Include="Assets\Scripts\Items\Item.cs" />
+    <Compile Include="Assets\Scripts\Items\Loot.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
+    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Player\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Player\InventoryController.cs" />
     <Compile Include="Assets\Scripts\Player\MouseController.cs" />
     <Compile Include="Assets\Scripts\Player\MovementController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />

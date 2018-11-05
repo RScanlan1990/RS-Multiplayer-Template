@@ -32,6 +32,9 @@ public class MouseController : NetworkBehaviour  {
                 case "Walkable":
                     _movement.CmdRequestMove(hit.point);
                     break;
+                case "Interactable":
+                    hit.transform.gameObject.GetComponent<Interactable>().Interact(this.gameObject);
+                    break;
             }
         }
     }
